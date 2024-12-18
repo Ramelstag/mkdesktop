@@ -6,7 +6,10 @@ Simple Python script that makes basic .desktop entries for a target file
 
 ## Usage
   
-Simply run `mkdesktop.py <file>`, and it will make a .desktop file targeting that file, and asks you if you want to add it to the applications folder in ~/.local/
+Simply run `mkdesktop.py <file>`, and it will make a .desktop file targeting that file, and asks you if you want to add it to the applications folder in ~/.local/ (this will add it to your application menu)
+
+Be noted that the script will not care about what file you pick, it only checks if it exists, and if it's not a directory. It just puts the path to it in the Exec= line.
+Currently it does not add descriptions nor icons. Maybe in the future I'll find a solution for that.
 
 ## "Installation"
 
