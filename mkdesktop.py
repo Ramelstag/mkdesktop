@@ -24,9 +24,9 @@ file.write("[Desktop Entry]\n" + "Name=" + str.capitalize(sys.argv[1]) + "\nType
 file.write("Exec=" + os.getcwd() + "/" + sys.argv[1] + "\n")
 #path
 file.write("Path=" + os.getcwd() + "\n")
-#less important stuff (needlessly concatenated yes i know shut up)
-file.write("Icon=\n" + "Comment=\n" + "Category=\n")
-file.close
+#less important stuff (needlessly concatenated yes i know shut up it's more readable that way)
+file.write("Icon=\n" + "Comment=\n" + "Category=\n")    #i don't know if there's an icon that would be
+file.close                                              #available anywhere that i could use. i guess i could make one...
 
 os.system("chmod +x " + sys.argv[1]) #making sure the target is executable
 
@@ -34,8 +34,8 @@ if os.path.exists("/home/" + os.environ["USER"] + "/.local/share/applications"):
 
     option = input("Would you like to move the output .desktop to ~/.local/share/applications? [y/N]")
     
-    if option.lower() in ["yes", "y"]:
-        print("Moving output to local applications folder...")
+    if option.lower() in ["yes", "y"]:      #yes i know that python has a switch...case thing, i tried it
+        print("Moving output to local applications folder...")  # but was having issues with it so i used elif
         shutil.move(sys.argv[1] + ".desktop", "/home/" + os.environ["USER"] + "/.local/share/applications/" + sys.argv[1] + ".desktop")
         print("Done. You may want to change the Name line, add a comment and an icon.")
     
